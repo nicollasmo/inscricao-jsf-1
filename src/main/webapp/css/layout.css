@@ -27,13 +27,13 @@ body {
 }
 
 #bottom a, #bottom a:visited  {
-  text-decoration : none;
-  font-weight: normal;
-  color: blue;
+    text-decoration : none;
+    font-weight: normal;
+    color: blue;
 }
 
 #bottom a:hover  {
-  text-decoration : underline;
+    text-decoration : underline;
 }
 
 .left_filler, .right_filler {
@@ -62,15 +62,15 @@ body {
 }
 
 #top a:link, #top a:visited {
-  color: white;
-  font-weight : bold;
-  text-decoration: none;
+    color: white;
+    font-weight : bold;
+    text-decoration: none;
 }
 
 #top a:link:hover, #top a:visited:hover  {
-  color: black;
-  font-weight : bold;
-  text-decoration : underline;
+    color: black;
+    font-weight : bold;
+    text-decoration : underline;
 }
 
 

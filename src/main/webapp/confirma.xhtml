@@ -19,10 +19,24 @@
         <h:form>
             <div class="titulo-form">INSCRIÇÃO CONFIRMADA</div>
             Prezado(a) #{inscricaoBean.candidato.nome},
-            Seguem os dados da sua insrição
-            Idioma escolhido: #{inscricaoBean.candidato.idioma.descricao}
-            CPF: #{inscricaoBean.candidato.cpf}
-            Data e hora: #{inscricaoBean.candidato.dataHora}
+            Seguem os dados da sua insrcição<br/>
+            Idioma escolhido: #{inscricaoBean.candidato.idioma.descricao}<br/>
+            CPF: #{inscricaoBean.candidato.cpf}<br/>
+            Data e hora: #{inscricaoBean.candidato.dataHora}<br/>
+            <h:panelGroup styleClass="form-block" layout="block">
+                <h:outputLabel value="Endereço: " />
+                <h:outputText value="#{inscricaoBean.candidato.endereco}"/>
+                <h:outputLabel value="Bairro: " />
+                <h:outputText value="#{inscricaoBean.candidato.bairro}"/>
+            </h:panelGroup>
+            <h:panelGroup styleClass="form-block" layout="block">
+                <h:outputLabel value="Cidade: " />
+                <h:outputText value="#{inscricaoBean.candidato.cidade}"/>
+                <h:outputLabel value="Estado: " />
+                <h:outputText value="#{inscricaoBean.candidato.estado}"/>
+                <h:outputLabel value="CEP: " />
+                <h:outputText value="#{inscricaoBean.candidato.cep}"/>
+            </h:panelGroup>
             <h:commandButton value="Voltar" action="inscricao"/>
             <h:messages/>
         </h:form>
