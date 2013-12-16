@@ -11,6 +11,8 @@ import java.io.Serializable;
  * @author Wilson
  */
 public class Idioma implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     private Integer codigo;
     private String descricao;
 

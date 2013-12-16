@@ -27,27 +27,27 @@
                 </h:panelGroup>
                 <h:panelGroup styleClass="form-block" layout="block">
                     <h:outputLabel for="cpf" styleClass ="required" value="CPF"/>
-                    <h:inputText id="cpf" value="#{inscricaoBean.candidato.cpf}" label="CPF" size="15" required="true"/>
+                    <h:inputText id="cpf" value="#{inscricaoBean.candidato.cpf}" label="CPF" size="15" required="true" disabled="#{inscricaoBean.editar}"/>
                     <h:outputLabel for="rg" styleClass ="required" value="RG"/>
                     <h:inputText id="rg" value="#{inscricaoBean.candidato.rg}" size="25" label="RG" maxlength="20" required="true"/>
                 </h:panelGroup>
                 <h:panelGroup styleClass="form-block" layout="block">
                     <h:outputLabel for="nome" styleClass ="required" value="Nome"/>
                     <h:inputText id="nome" value="#{inscricaoBean.candidato.nome}" size="50"
-                         label="Nome" maxlength="100" required="true"/>
+                                 label="Nome" maxlength="100" required="true"/>
                 </h:panelGroup>
                 <h:panelGroup styleClass="form-block" layout="block">
                     <h:outputLabel for="endereco" styleClass ="required" value="Endereço"/>
                     <h:inputText id="endereco" value="#{inscricaoBean.candidato.endereco}" size="50"
-                          styleClass="ui-inputfield" label="Endereço" maxlength="80" required="true"/>
+                                 styleClass="ui-inputfield" label="Endereço" maxlength="80" required="true"/>
                 </h:panelGroup>
                 <h:panelGroup styleClass="form-block" layout="block">
                     <h:outputLabel for="cidade" styleClass ="required" value="Cidade"/>
                     <h:inputText id="cidade" value="#{inscricaoBean.candidato.cidade}" size="50"
-                            styleClass="ui-inputfield" label="cidade" maxlength="50" required="true"/>
+                                 styleClass="ui-inputfield" label="cidade" maxlength="50" required="true"/>
                     <h:outputLabel for="estado" styleClass ="required" value="Estado"/>
                     <h:inputText id="estado" value="#{inscricaoBean.candidato.estado}" size="4"
-                            styleClass="ui-inputfield" label="Estado" maxlength="2" required="true"/>
+                                 styleClass="ui-inputfield" label="Estado" maxlength="2" required="true"/>
                 </h:panelGroup>
                 <h:panelGroup styleClass="form-block" layout="block">
                     <h:outputLabel for="cep" styleClass ="required" value="CEP"/>
@@ -64,20 +64,23 @@
                 <h:panelGroup styleClass="form-block" layout="block">
                     <h:outputLabel for="email" styleClass ="required" value="E-mail"/>
                     <h:inputText id="email" value="#{inscricaoBean.candidato.email}" size="80"
-                          label="E-mail" maxlength="200" required="true"/>
+                                 label="E-mail" maxlength="200" required="true"/>
                 </h:panelGroup>
                 <h:panelGroup styleClass="form-block" layout="block">
                     <h:outputLabel for="instituicao" styleClass ="required" value="Instituição"/>
                     <h:inputText id="instituicao" value="#{inscricaoBean.candidato.instituicao}" size="80"
-                          styleClass="ui-inputfield" label="Instituição" maxlength="100" required="true"/>
+                                 styleClass="ui-inputfield" label="Instituição" maxlength="100" required="true"/>
                 </h:panelGroup>
                 <h:panelGroup styleClass="form-block" layout="block">
                     <h:outputLabel for="programa" styleClass ="required" value="Programa"/>
                     <h:inputText id="programa" value="#{inscricaoBean.candidato.programa}" size="80"
-                          styleClass="ui-inputfield" label="Programa" maxlength="100" required="true"/>
+                                 styleClass="ui-inputfield" label="Programa" maxlength="100" required="true"/>
                 </h:panelGroup>
             </h:panelGroup>
-            <h:commandButton value="Confirmar Inscrição" action="#{inscricaoBean.confirmaAction}"/>
+            <h:commandButton type="reset" rendered="#{!inscricaoBean.editar}" value="Nova Inscrição" action="#{inscricaoBean.novaInscricao}"/>
+            <h:commandButton rendered="#{!inscricaoBean.editar}" value="Confirmar Inscrição" action="#{inscricaoBean.confirmaAction}"/>
+            <h:commandButton rendered="#{inscricaoBean.editar}" value="Alterar Inscrição" action="#{inscricaoBean.confirmaAction}"/>
+            <h:outputLabel value="Erro ao realizar inscrição, CPF duplicado" rendered="#{inscricaoBean.erro}"/>
             <h:messages/>
         </h:form>
     </ui:define>

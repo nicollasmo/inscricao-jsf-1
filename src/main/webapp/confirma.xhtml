@@ -17,12 +17,21 @@
 
     <ui:define name="content">
         <h:form>
-            <div class="titulo-form">INSCRIÇÃO CONFIRMADA</div>
-            Prezado(a) #{inscricaoBean.candidato.nome},
-            Seguem os dados da sua insrcição<br/>
-            Idioma escolhido: #{inscricaoBean.candidato.idioma.descricao}<br/>
-            CPF: #{inscricaoBean.candidato.cpf}<br/>
-            Data e hora: #{inscricaoBean.candidato.dataHora}<br/>
+            <h:panelGroup styleClass="form-block" layout="block">
+                <h:outputLabel value="Prezado candidato, seguem os dados da sua inscrição" />
+            </h:panelGroup>
+            <h:panelGroup styleClass="form-block" layout="block">
+                <h:outputLabel value="CPF: " />
+                <h:outputText value="#{inscricaoBean.candidato.cpf}"/>
+                <h:outputLabel value="Data e hora: " />
+                <h:outputText value="#{inscricaoBean.candidato.dataHora}"/>
+            </h:panelGroup>
+            <h:panelGroup styleClass="form-block" layout="block">
+                <h:outputLabel value="Nome: " />
+                <h:outputText value="#{inscricaoBean.candidato.nome}"/>
+                <h:outputLabel value="Idioma escolhido: " />
+                <h:outputText value="#{inscricaoBean.candidato.idioma.descricao}"/>
+            </h:panelGroup>
             <h:panelGroup styleClass="form-block" layout="block">
                 <h:outputLabel value="Endereço: " />
                 <h:outputText value="#{inscricaoBean.candidato.endereco}"/>
@@ -37,7 +46,8 @@
                 <h:outputLabel value="CEP: " />
                 <h:outputText value="#{inscricaoBean.candidato.cep}"/>
             </h:panelGroup>
-            <h:commandButton value="Voltar" action="inscricao"/>
+            <h:commandButton value="Voltar" action="index"/>
+            <h:commandButton value="Alterar" action="#{inscricaoBean.alterar}"/>
             <h:messages/>
         </h:form>
     </ui:define>

@@ -11,6 +11,7 @@ import javax.validation.constraints.Size;
  * @author Wilson
  */
 public class Candidato implements Serializable {
+
     private static final long serialVersionUID = 1L;
     private Long cpf;
     private String rg;

@@ -22,16 +22,16 @@
         <h:form>
             <h:panelGroup styleClass="form-block" layout="block">
                 <h:outputLabel for="login" styleClass ="required" value="Login:"/>
-                <h:inputText id="login" value="#{loginBean.login}" label="CPF" size="15" required="true"/>
+                <h:inputText id="login" value="#{loginBean.login}" label="Login" size="15" required="true"/>
             </h:panelGroup>
             <h:panelGroup styleClass="form-block" layout="block">
                 <h:outputLabel for="senha" styleClass ="required" value="Senha:"/>
-                <h:inputText id="senha" value="#{loginBean.senha}" label="CPF" size="15" required="true"/>
+                <h:inputText id="senha" value="#{loginBean.senha}" label="Senha" size="15" required="true"/>
             </h:panelGroup>
             <h:commandButton value="Realizar Login" action="#{loginBean.realizarLogin()}"/>
-        </h:form>
-        <h:outputText rendered="#{!loginBean.logado}" value = "Usuário ou senha incorreto(s)"/>
-        <h:messages/>
 
+            <h:outputText rendered="#{!loginBean.logado}" value = "Usuário ou senha incorreto(s)"/>
+            <h:messages/>
+        </h:form>
     </ui:define>
 </ui:composition>
