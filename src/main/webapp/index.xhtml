@@ -22,6 +22,9 @@
                 <h:inputText id="cpf" value="#{inscricaoBean.CPF}" label="CPF" size="15" required="true"/>
                 <h:commandButton value="Alterar Inscrição" action="#{inscricaoBean.pesquisarCPF}"/>
             </h:panelGroup>
+            <h:panelGroup>
+                <h:commandButton value="Editar Candidatos" action="listaCandidatos"/>
+            </h:panelGroup>
             <h:outputLabel rendered="#{!inscricaoBean.encontrou}" value="Erro, CPF não encontrado na base de dados" />
         </h:form>
     </ui:define>

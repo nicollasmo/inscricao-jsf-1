@@ -74,6 +74,14 @@ public class InscricaoBean extends PageBean implements Serializable {
         this.encontrou = encontrou;
     }
 
+    public ListaInscricoesBean getListaInscricoesBean() {
+        return listaInscricoesBean;
+    }
+
+    public void setListaInscricoesBean(ListaInscricoesBean listaInscricoesBean) {
+        this.listaInscricoesBean = listaInscricoesBean;
+    }
+
     public List<SelectItem> getIdiomaItemList() {
         if (idiomaItemList != null) {
             return idiomaItemList;
@@ -131,6 +139,16 @@ public class InscricaoBean extends PageBean implements Serializable {
     public String novaInscricao() {
         erro = false;
         candidato = new Candidato(idiomas[0]);
+        return "";
+    }
+    public String alterar(Candidato candidato){
+        editar = true;
+        erro = false;
+        this.candidato = candidato;
+        return "inscricao";
+    }
+    public String excluir(Candidato candidato){
+        listaInscricoesBean.removerCandidato(candidato);
         return "";
     }
 }

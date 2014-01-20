@@ -9,8 +9,11 @@ import inscricao.entity.Candidato;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.model.DataModel;
+import javax.faces.model.ListDataModel;
 
 /**
  *
@@ -22,7 +25,17 @@ public class ListaInscricoesBean implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private List<Candidato> inscricoes = new ArrayList<>();
+    private List<Candidato> inscricoes = new Vector<>();
+
+    private DataModel<Candidato> inscricoesDataModel = new ListDataModel<>(inscricoes);
+
+    public DataModel<Candidato> getInscricoesDataModel() {
+        return inscricoesDataModel;
+    }
+
+    public void setInscricoesDataModel(DataModel<Candidato> inscricoesDataModel) {
+        this.inscricoesDataModel = inscricoesDataModel;
+    }
 
     public List<Candidato> getInscricoes() {
         return inscricoes;
@@ -58,6 +71,9 @@ public class ListaInscricoesBean implements Serializable {
                 this.inscricoes.add(candidato);
             }
         }
+    }
+    public void removerCandidato(Candidato candidato){
+        this.inscricoes.remove(candidato);
     }
 
 }
